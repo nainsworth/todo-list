@@ -1,0 +1,128 @@
+:root {
+  --slate050: #f8fafc;
+  --slate100: #f1f5f9;
+  --slate200: #e2e8f0;
+  --slate300: #cbd5e1;
+  --slate400: #94a3b8;
+  --slate500: #64748b;
+  --slate600: #475569;
+  --slate700: #334155;
+  --slate800: #1e293b;
+  --slate900: #0f172a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  font-family: Poppins, sans-serif;
+}
+
+header {
+  grid-column: 1 / -1;
+  color: var(--slate050);
+  background-color: var(--slate800);
+  padding: 4px 8px;
+
+}
+
+header .title {
+  display: flex;
+  align-items: center;
+
+}
+
+header .title img {
+  width: 30px;
+}
+
+.sidebar {
+  background-color: var(--slate200);
+  height: 100%;
+}
+
+.folder-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+}
+
+.folder-section button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--slate200);
+  font-weight: 800;
+  padding: 6px 30px 6px 20px;
+}
+
+.folder-section button:hover {
+  background-color: var(--slate300);
+  cursor: pointer;
+}
+
+.folder-section button.active {
+  background-color: var(--slate300);
+  cursor: default;
+  font-weight: 600;
+}
+
+.folder-section button img {
+  width: 20px;
+}
+
+.folder-section button p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.folder-section button p.active {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.project-section h3 {
+  text-align: center;
+}
+
+.task-section {
+  background-color: var(--slate050);
+}
+
+footer {
+  grid-column: 1 / -1;
+  background-color: var(--slate800);
+  padding: 4px;
+}
+
+footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--slate050);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a img {
+  width: 35px;
+}
