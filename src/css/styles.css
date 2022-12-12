@@ -36,17 +36,20 @@ header {
   color: var(--slate050);
   background-color: var(--slate800);
   padding: 4px 8px;
-
 }
 
 header .title {
   display: flex;
   align-items: center;
-
 }
 
 header .title img {
   width: 30px;
+}
+
+main {
+  display: flex;
+  min-width: 100vw;
 }
 
 .sidebar {
@@ -83,7 +86,7 @@ header .title img {
 .folder-section button.active {
   background-color: var(--slate300);
   cursor: default;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .folder-section button img {
@@ -105,7 +108,40 @@ header .title img {
 }
 
 .task-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
   background-color: var(--slate050);
+  padding: 24px 48px;
+}
+
+.task-container {
+ 
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  width: 100%;
+}
+
+.task p {
+  flex: 1;
+}
+
+.task-date {
+  text-align: right;
+}
+
+.task-container button {
+  border: none;
+  background-color: var(--slate200);
+  padding: 4px 12px;
+  border-radius: 4px;
+  width: 28px;
 }
 
 footer {
