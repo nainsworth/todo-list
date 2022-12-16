@@ -57,7 +57,8 @@ main {
   height: 100%;
 }
 
-.folder-section {
+.folder-section, 
+.project-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,7 +67,8 @@ main {
   padding: 12px 18px;
 }
 
-.folder-section button {
+.folder-section button,
+.project {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -74,16 +76,17 @@ main {
   border: none;
   border-radius: 4px;
   background-color: var(--slate200);
-  font-weight: 800;
   padding: 6px 30px 6px 20px;
 }
 
-.folder-section button:hover {
+.folder-section button:hover, 
+.project:hover {
   background-color: var(--slate300);
   cursor: pointer;
 }
 
-.folder-section button.active {
+.folder-section button.active, 
+.project.active {
   background-color: var(--slate300);
   cursor: default;
   font-weight: 800;
@@ -93,39 +96,76 @@ main {
   width: 20px;
 }
 
-.folder-section button p {
+.folder-section button p, 
+.project p {
   font-size: 1rem;
   font-weight: 500;
+  white-space: nowrap;
 }
 
-.folder-section button p.active {
-  font-size: 1.25rem;
-  font-weight: 700;
+.folder-section button p.active, 
+.project p.active {
+  font-weight: 600;
 }
 
 .project-section h3 {
   text-align: center;
 }
 
+.project img {
+  width: 24px;
+}
+
+.add-project {
+  border: none;
+  background-color: var(--slate300);
+  border-radius: 4px;
+  width: 100%;
+  height: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 16px;
+}
+
+.add-project:hover {
+  cursor: pointer;
+  background-color: var(--slate400);
+}
+
 .task-section {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  width: 100%;
   background-color: var(--slate050);
   padding: 24px 48px;
+  width: 100%;
 }
 
 .task-container {
- 
 }
 
 .task {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 24px;
-  width: 100%;
+  gap: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.completed {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: black;
+  color: var(--slate500);
+}
+
+.task:hover {
+  background-color: var(--slate200);
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
 }
 
 .task p {
@@ -136,12 +176,32 @@ main {
   text-align: right;
 }
 
-.task-container button {
+.delete-task {
+  color: transparent;
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+}
+
+.task:hover .delete-task {
+  color: black;
+  cursor: pointer;
+}
+
+.add-task {
   border: none;
   background-color: var(--slate200);
-  padding: 4px 12px;
   border-radius: 4px;
-  width: 28px;
+  width: 150px;
+  height: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 16px;
+}
+
+.add-task:hover {
+  cursor: pointer;
+  background-color: var(--slate300);
 }
 
 footer {
