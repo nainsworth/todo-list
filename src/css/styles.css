@@ -57,7 +57,7 @@ main {
   height: 100%;
 }
 
-.folder-section, 
+.folder-section,
 .project-section {
   display: flex;
   flex-direction: column;
@@ -78,13 +78,13 @@ main {
   padding: 6px 30px 6px 20px;
 }
 
-.folder-section button:hover, 
+.folder-section button:hover,
 .project:hover {
   background-color: var(--slate300);
   cursor: pointer;
 }
 
-.folder-section button.active, 
+.folder-section button.active,
 .project.active {
   background-color: var(--slate300);
   cursor: default;
@@ -95,14 +95,14 @@ main {
   width: 20px;
 }
 
-.folder-section button p, 
+.folder-section button p,
 .project p {
   font-size: 1rem;
   font-weight: 500;
   white-space: nowrap;
 }
 
-.folder-section button p.active, 
+.folder-section button p.active,
 .project p.active {
   font-weight: 600;
 }
@@ -141,7 +141,7 @@ main {
   font-weight: bold;
   font-size: 1rem;
   margin-top: 16px;
-  }
+}
 
 .add-project:hover {
   cursor: pointer;
@@ -163,9 +163,6 @@ main {
   background-color: var(--slate050);
   padding: 24px 48px;
   width: 100%;
-}
-
-.task-container {
 }
 
 .task {
@@ -195,7 +192,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:hover {
-cursor: pointer;
+  cursor: pointer;
 }
 
 .task p {
@@ -210,7 +207,7 @@ cursor: pointer;
   background-color: var(--slate400);
 }
 
-.task:hover .delete, 
+.task:hover .delete,
 .project:hover .delete {
   color: black;
   cursor: pointer;
