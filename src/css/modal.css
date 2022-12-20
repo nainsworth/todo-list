@@ -1,0 +1,81 @@
+.task-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 1;
+    background-color: var(--slate050);
+    transition: 0.25s ease-in-out;
+    height: 225px;
+    width: 450px;
+    border-radius: 4px;
+    padding: 24px;
+}
+
+.task-modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.task-modal form {
+    display: grid;
+    grid-template-columns: repeat(2, auto);    
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.task-modal form h2 {
+    grid-column: 1 / -1;
+    justify-self: center;
+}   
+
+.task-modal form input,
+.task-modal form select {
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid var(--slate300);
+    padding: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+.task-modal form input:focus,
+.task-modal form select:focus {
+   border-color: var(--slate700);
+   box-shadow: 0 0 4px 2px var(--slate300);
+}
+
+#task-desc {
+    grid-column: 1 / -1;
+}
+
+.task-modal form button {
+    grid-column: 1 / -1;
+    height: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    width: 60%;
+    justify-self: center;
+    border: none;
+    background-color: var(--slate300);
+    border-radius: 4px;
+}
+
+.task-modal form button:hover {
+    cursor: pointer;
+    background-color: var(--slate400);
+}
+
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    display: none;
+    transition: 0.25s ease-in-out;
+}
+
+.overlay.active {
+    display:block;
+}
