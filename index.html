@@ -7,6 +7,7 @@
     <title>To-Do List</title>
     <!-- Links -->
     <link rel="stylesheet" href="../src/css/styles.css" />
+    <link rel="stylesheet" href="../src/css/modal.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -42,7 +43,7 @@
           <div class="project-container">
             <!-- temp button -->
             <button class="project">
-              <img src="../src/assets/img/custom-project.svg" alt="">
+              <img src="../src/assets/img/custom-project.svg" alt="" />
               <p>The Odin Project</p>
             </button>
             <button class="add-project">+ Add Project</button>
@@ -54,18 +55,17 @@
         <div class="task-container">
           <!-- temp task and task button -->
           <div class="task">
-            <input type="checkbox" name="" id="" checked>
+            <input type="checkbox" name="" id="" checked />
             <p class="task-desc completed">Style this in CSS</p>
             <p class="task-date completed">No Date</p>
             <button class="delete-task">✖</button>
           </div>
           <div class="task">
-            <input type="checkbox" name="" id="">
+            <input type="checkbox" name="" id="" />
             <p>Remove Temp HTML</p>
             <p class="task-date">12/25/2022</p>
             <button class="delete-task">✖</button>
           </div>
-          
         </div>
         <button class="add-task">+ Add Task</button>
       </div>
@@ -80,5 +80,25 @@
         NAINSWORTH
       </a>
     </footer>
+
+    <!-- Temp Add Task Modal -->
+    <div class="task-modal">
+      <form action="#">
+        <h2>New Task</h2>
+        <input type="text" placeholder="Task" id="task-desc" required />
+        <select name="" id="task-priority">
+          <option value="">No Priority</option>
+          <option value="">Low</option>
+          <option value="">Medium</option>
+          <option value="">High</option>
+        </select>
+        <input type="datetime-local" name="" id="task-datetime" />
+        <button type="submit">Add Task</button>
+      </form>
+    </div>
+    <div class="overlay"></div>
+
+    <!-- Temp Add Project Modal -->
+    <div class="project-modal"></div>
   </body>
 </html>
