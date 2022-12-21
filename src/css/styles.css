@@ -165,7 +165,7 @@ main {
   width: 100%;
 }
 
-.task {
+.task-card {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -193,7 +193,7 @@ main {
   color: var(--slate500);
 }
 
-.task:hover {
+.task-card:hover {
   background-color: var(--slate200);
   cursor: pointer;
 }
@@ -207,7 +207,7 @@ input[type="checkbox"]:hover {
   cursor: pointer;
 }
 
-.task p {
+.task-card p {
   flex: 1;
 }
 
@@ -219,7 +219,7 @@ input[type="checkbox"]:hover {
   background-color: var(--slate400);
 }
 
-.task:hover .delete,
+.task-card:hover .delete,
 .project:hover .delete {
   color: black;
   cursor: pointer;
