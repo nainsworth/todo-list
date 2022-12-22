@@ -1,4 +1,10 @@
-function createTaskModal() {
+function loadTaskModal() {
+  const body = document.querySelector("body");
+
+  const overlay = document.createElement("div");
+  overlay.classList.add("overlay");
+  overlay.addEventListener("click", closeModal);
+
   const taskModal = document.createElement("div");
   taskModal.classList.add("task-modal");
 
@@ -37,12 +43,12 @@ function createTaskModal() {
     modalForm.appendChild(select);
   }
 
-  function createDatetimeInput() {
-    const datetime = document.createElement("input");
-    datetime.id = "task-datetime";
-    datetime.type = "datetime-local";
+  function createDateTimeInput() {
+    const dateTime = document.createElement("input");
+    dateTime.id = "task-dateTime";
+    dateTime.type = "dateTime-local";
 
-    modalForm.appendChild(datetime);
+    modalForm.appendChild(dateTime);
   }
 
   function createSubmitBtn() {
@@ -53,12 +59,21 @@ function createTaskModal() {
     modalForm.appendChild(submit);
   }
 
+  //close modal
+  function closeModal() {
+    taskModal.classList.remove("active");
+    overlay.classList.remove("active");
+  }
+
   function render() {
+    body.appendChild(taskModal);
+    body.appendChild(overlay);
+
     taskModal.appendChild(modalForm);
     createTitle();
     createTaskInput();
     createDropDown();
-    createDatetimeInput();
+    createDateTimeInput();
     createSubmitBtn();
   }
 
@@ -67,14 +82,4 @@ function createTaskModal() {
   return taskModal;
 }
 
-function loadModal() {
-  const body = document.querySelector("body");
-
-  const overlay = document.createElement("div");
-  overlay.classList.add("overlay");
-
-  body.appendChild(createTaskModal());
-  body.appendChild(overlay);
-}
-
-export default loadModal;
+export default loadTaskModal;
