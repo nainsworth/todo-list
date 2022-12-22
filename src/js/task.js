@@ -27,7 +27,15 @@ function loadTaskSection() {
   const taskSection = document.querySelector(".task-section");
   const taskContainer = document.createElement("div");
   const taskModal = document.querySelector(".task-modal");
+
   const overlay = document.querySelector(".overlay");
+  overlay.addEventListener("click", closeModal);
+
+  const addDescription = document.querySelector("#task-desc");
+  const addPriority = document.querySelector("#task-priority");
+  const addDateTime = document.querySelector("#task-dateTime");
+  const addNewTaskBtn = document.querySelector("#submit-task");
+  addNewTaskBtn.addEventListener("click", addTaskToList);
 
   // DOM List Title
   function createTitle(list) {
@@ -51,21 +59,23 @@ function loadTaskSection() {
 
     const date = document.createElement("p");
     date.classList.add("task-date");
-    date.textContent = task.dateTime;
+    if (task.dateTime === "") {
+      date.textContent = "No Date";
+    } else {
+      date.textContent = task.dateTime;
+    }
 
     const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("delete");
     deleteBtn.textContent = "✖";
 
     // Add if statement to display priority
-    if ((task.priority = "High")) {
+    if (task.priority === "High") {
       taskCard.classList.add("high");
-    } else if ((task.priority = "Medium")) {
+    } else if (task.priority === "Medium") {
       taskCard.classList.add("medium");
-    } else if ((task.priority = "low")) {
+    } else if (task.priority === "Low") {
       taskCard.classList.add("low");
-    } else {
-      return;
     }
 
     taskContainer.appendChild(taskCard);
@@ -88,18 +98,49 @@ function loadTaskSection() {
     newTaskBtn.addEventListener("click", openModal);
   }
 
-   //open modal
+  //open modal
   function openModal() {
     taskModal.classList.add("active");
     overlay.classList.add("active");
   }
 
-  
+  //close modal
+  function closeModal() {
+    taskModal.classList.remove("active");
+    overlay.classList.remove("active");
+    clearModalInputs();
+  }
 
-   // update list
-   function updateList() {
+  // Modal Input
+  function modalInputs() {
+    const description = addDescription.value;
+    const priority = addPriority.value;
+    const dateTime = addDateTime.value;
+    return new Task(description, priority, dateTime);
+  }
+
+  // Clear Input
+  function clearModalInputs() {
+    addDescription.value = "";
+    addPriority.value = "No Priority";
+    addDateTime.value = "";
+  }
+
+  // update list
+  function updateList() {
     taskContainer.textContent = "";
     for (let task of list.allList) createTaskCard(task);
+  }
+
+  // Add task to list
+  function addTaskToList() {
+    const newTask = modalInputs();
+
+    if (addDescription.value !== "") {
+      list.addToList(newTask);
+      updateList();
+      closeModal();
+    }
   }
 
   // Render Task Container
