@@ -49,7 +49,7 @@
   grid-column: 1 / -1;
 }
 
-.task-modal form button {
+#submit-task {
   grid-column: 1 / -1;
   height: 30px;
   font-weight: 700;
@@ -61,7 +61,7 @@
   border-radius: 4px;
 }
 
-.task-modal form button:hover {
+#submit-task:hover {
   cursor: pointer;
   background-color: var(--slate400);
 }

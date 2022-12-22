@@ -1,10 +1,4 @@
 function loadTaskModal() {
-  const body = document.querySelector("body");
-
-  const overlay = document.createElement("div");
-  overlay.classList.add("overlay");
-  overlay.addEventListener("click", closeModal);
-
   const taskModal = document.createElement("div");
   taskModal.classList.add("task-modal");
 
@@ -53,19 +47,19 @@ function loadTaskModal() {
 
   function createSubmitBtn() {
     const submit = document.createElement("button");
+    submit.id = "submit-task";
     submit.type = "submit";
     submit.textContent = "Add Task";
 
     modalForm.appendChild(submit);
   }
 
-  //close modal
-  function closeModal() {
-    taskModal.classList.remove("active");
-    overlay.classList.remove("active");
-  }
-
   function render() {
+    const body = document.querySelector("body");
+
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+
     body.appendChild(taskModal);
     body.appendChild(overlay);
 
