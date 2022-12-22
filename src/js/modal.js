@@ -40,7 +40,7 @@ function loadTaskModal() {
   function createDateTimeInput() {
     const dateTime = document.createElement("input");
     dateTime.id = "task-dateTime";
-    dateTime.type = "dateTime-local";
+    dateTime.type = "date";
 
     modalForm.appendChild(dateTime);
   }
