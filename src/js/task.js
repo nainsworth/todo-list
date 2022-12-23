@@ -2,10 +2,11 @@
 
 // Create Task Objects
 class Task {
-  constructor(description, priority, dateTime) {
+  constructor(description, priority, dateTime, complete) {
     this.description = description;
     this.priority = priority;
     this.dateTime = dateTime;
+    this.complete = complete;
   }
 }
 
@@ -35,6 +36,7 @@ function loadTaskSection() {
   const addPriority = document.querySelector("#task-priority");
   const addDateTime = document.querySelector("#task-dateTime");
   const addNewTaskBtn = document.querySelector("#submit-task");
+  const isComplete = document.querySelector("input[type=checkbox]");
   addNewTaskBtn.addEventListener("click", addTaskToList);
 
   // DOM List Title
@@ -68,6 +70,27 @@ function loadTaskSection() {
     const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("delete");
     deleteBtn.textContent = "✖";
+
+    // Delete Task
+    deleteBtn.addEventListener("click", () => {
+      list.allList.splice(list.allList.indexOf(task), 1);
+      updateList();
+    });
+
+    // Verify if Task is completed
+    if (task.complete === true) {
+      description.classList.add("completed");
+      date.classList.add("completed");
+    } else {
+      description.classList.remove("completed");
+      date.classList.remove("completed");
+    }
+
+    // Complete Task
+    checkbox.addEventListener("change", () => {
+      task.complete = !task.complete;
+      updateList();
+    });
 
     // Add if statement to display priority
     if (task.priority === "High") {
@@ -116,7 +139,8 @@ function loadTaskSection() {
     const description = addDescription.value;
     const priority = addPriority.value;
     const dateTime = addDateTime.value;
-    return new Task(description, priority, dateTime);
+    const complete = false;
+    return new Task(description, priority, dateTime, complete);
   }
 
   // Clear Input
