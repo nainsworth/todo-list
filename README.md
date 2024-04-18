@@ -15,4 +15,4 @@ Now has Local Storage
 - JavaScript
 
 ## Live Post
-[Library Web Link](https://nainsworth.github.io/todo-list/)
+[Todo List Web Link](https://nainsworth.github.io/todo-list/)
